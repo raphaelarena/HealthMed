@@ -31,8 +31,24 @@ namespace HealthMed.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task AtualizarHorarioDisponivel(HorarioDisponivel horario)
+        public async Task AtualizarHorarioDisponivel(HorarioDisponivel horario, string usuario)
         {
+            _context.HorariosDisponiveis.Update(horario);
+            await _context.SaveChangesAsync();
+
+
+            var horariosDisponiveisExistente = await _context.HorariosDisponiveis.FindAsync(horario.Id);
+            if (horariosDisponiveisExistente == null) throw new KeyNotFoundException("Agendamento não encontrado.");
+
+            var audit = new HorarioDisponivelAudit
+            {
+                HorarioDisponivelId = horario.Id,
+                ModificadoPor = usuario,
+                DataModificacao = DateTime.Now,
+                Alteracao = $"Data de Disponibilidade alterada para {horario.DataDisponibilidade}"
+            };
+
+            _context.HorarioDisponivelAudits.Add(audit);
             _context.HorariosDisponiveis.Update(horario);
             await _context.SaveChangesAsync();
         }

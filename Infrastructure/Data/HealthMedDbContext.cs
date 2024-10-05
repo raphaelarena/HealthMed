@@ -12,6 +12,7 @@ namespace HealthMed.Infrastructure.Data
         public DbSet<Agendamento> Agendamentos { get; set; }
         public DbSet<AgendamentoAudit> AgendamentoAudits { get; set; }
         public DbSet<HorarioDisponivel> HorariosDisponiveis { get; set; }
+        public DbSet<HorarioDisponivelAudit> HorarioDisponivelAudits { get; set; }
 
         public HealthMedDbContext(DbContextOptions<HealthMedDbContext> options) : base(options)
         {

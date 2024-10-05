@@ -7,7 +7,7 @@ namespace HealthMed.Application.Interfaces
     {
         Task CadastrarMedico(MedicoDto medicoDto);
         Task CadastrarHorarioDisponivel(HorarioDisponivel horario);
-        Task EditarHorarioDisponivel(HorarioDisponivel horario);
+        Task EditarHorarioDisponivel(HorarioDisponivel horario, string usuario);
         Task<List<HorarioDisponivel>> ObterHorariosDisponiveis(int medicoId);
     }
 

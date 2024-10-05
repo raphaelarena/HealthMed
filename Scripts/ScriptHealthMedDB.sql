@@ -46,3 +46,12 @@ CREATE TABLE AgendamentoAudit (
     DataModificacao DATETIME,
     Alteracao NVARCHAR(500)
 );
+
+-- Tabela de Auditoria de Horarios Disponiveis
+CREATE TABLE HorarioDisponivelAudit (
+    Id INT PRIMARY KEY IDENTITY,
+    HorarioDisponivelId INT FOREIGN KEY REFERENCES HorarioDisponivel(Id),
+    ModificadoPor NVARCHAR(100),
+    DataModificacao DATETIME,
+    Alteracao NVARCHAR(500)
+);

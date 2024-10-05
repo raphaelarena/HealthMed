@@ -36,9 +36,9 @@ namespace HealthMed.Application.Services
             await _medicoRepository.AdicionarHorarioDisponivel(horario);
         }
 
-        public async Task EditarHorarioDisponivel(HorarioDisponivel horario)
+        public async Task EditarHorarioDisponivel(HorarioDisponivel horario, string usuario)
         {
-            await _medicoRepository.AtualizarHorarioDisponivel(horario);
+            await _medicoRepository.AtualizarHorarioDisponivel(horario, usuario);
         }
 
         public async Task<List<HorarioDisponivel>> ObterHorariosDisponiveis(int medicoId)

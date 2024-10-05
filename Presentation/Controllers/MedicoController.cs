@@ -37,7 +37,9 @@ namespace HealthMed.Presentation.Controllers
         [Authorize]
         public async Task<IActionResult> EditarHorarioDisponivel([FromBody] HorarioDisponivel horario)
         {
-            await _medicoService.EditarHorarioDisponivel(horario);
+            var usuario = User.Identity.Name;
+
+            await _medicoService.EditarHorarioDisponivel(horario, usuario);
             return NoContent();
         }
 

@@ -41,6 +41,7 @@ namespace HealthMed.Infrastructure.Repositories
             };
 
             _context.AgendamentoAudits.Add(audit);
+            _context.Agendamentos.Update(agendamentoExistente);
             await _context.SaveChangesAsync();
         }
     }
