@@ -29,7 +29,7 @@ Esta API foi desenvolvida em C# com o objetivo de gerenciar o agendamento de con
 - Git (para clonar o repositório)
 
 ## Documentação 📃
-- [Vídeo demonstrando o projeto](https://youtu.be/-b77WFcbVKE)
+- [Vídeo demonstrando o projeto](https://youtu.be/4UeDnufH1TM)
 
 ## Instalação 🔁
 1. Clone o repositório:
