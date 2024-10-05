@@ -9,7 +9,7 @@ Esta API foi desenvolvida em C# com o objetivo de gerenciar o agendamento de con
 - Cadastro de Médicos: Registra médicos com suas respectivas especialidades.
 - Agendamento de Consultas: Permite o agendamento de consultas entre médicos e pacientes em horários disponíveis.
 - Consulta de Agendamentos: Visualiza consultas agendadas com filtros por data, paciente e médico.
-- Edição e Cancelamento de Consultas: Atualiza ou remove agendamentos conforme necessário.
+- Edição Consultas: Atualiza agendamentos conforme necessário.
 - Notificações: Envia lembretes automáticos para pacientes e médicos antes da consulta (opcional).
 
 
@@ -29,8 +29,6 @@ Esta API foi desenvolvida em C# com o objetivo de gerenciar o agendamento de con
 - Git (para clonar o repositório)
 
 ## Documentação 📃
-- [Microservice para gerencias filas](https://github.com/raphaelarena/ProcessingMicroservice/tree/BankProcessingMicroservice)
-- [Documentação Funcional do projeto](https://github.com/Palomapsj/BankFiap/blob/main/Especifica%C3%A7%C3%A3o_funcional_Bank.docx)
 - [Vídeo demonstrando o projeto](https://youtu.be/-b77WFcbVKE)
 
 ## Instalação 🔁
