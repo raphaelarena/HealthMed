@@ -21,6 +21,7 @@ namespace HealthMed.Presentation.Controllers
         [Authorize]
         public async Task<IActionResult> AgendarConsulta([FromBody] AgendamentoDto agendamentoDto)
         {
+            //Aqui
             await _agendamentoService.AgendarConsulta(agendamentoDto);
             return Ok("Consulta agendada com sucesso.");
         }
