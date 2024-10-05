@@ -30,5 +30,20 @@ namespace HealthMed.Application.Services
 
             await _medicoRepository.Add(medico);
         }
+
+        public async Task CadastrarHorarioDisponivel(HorarioDisponivel horario)
+        {
+            await _medicoRepository.AdicionarHorarioDisponivel(horario);
+        }
+
+        public async Task EditarHorarioDisponivel(HorarioDisponivel horario)
+        {
+            await _medicoRepository.AtualizarHorarioDisponivel(horario);
+        }
+
+        public async Task<List<HorarioDisponivel>> ObterHorariosDisponiveis(int medicoId)
+        {
+            return await _medicoRepository.ObterHorariosDisponiveisPorMedicoId(medicoId);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using HealthMed.Application.DTOs;
 using HealthMed.Application.Interfaces;
 using HealthMed.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthMed.Presentation.Controllers
@@ -17,6 +18,7 @@ namespace HealthMed.Presentation.Controllers
         }
 
         [HttpPost("agendar")]
+        [Authorize]
         public async Task<IActionResult> AgendarConsulta([FromBody] AgendamentoDto agendamentoDto)
         {
             await _agendamentoService.AgendarConsulta(agendamentoDto);
@@ -24,6 +26,7 @@ namespace HealthMed.Presentation.Controllers
         }
 
         [HttpPut("atualizar/{id}")]
+        [Authorize]
         public async Task<IActionResult> AtualizarAgendamento(int id, [FromBody] AgendamentoDto agendamentoDto)
         {
             var agendamento = new Agendamento

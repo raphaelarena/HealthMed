@@ -2,6 +2,7 @@
 using HealthMed.Application.Interfaces;
 using HealthMed.Application.Services;
 using HealthMed.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthMed.Presentation.Controllers
@@ -24,14 +25,16 @@ namespace HealthMed.Presentation.Controllers
             return Ok("Médico cadastrado com sucesso.");
         }
 
-        [HttpPost]
+        [HttpPost("cadastrar-horario-disponivel")]
+        [Authorize]
         public async Task<IActionResult> CadastrarHorarioDisponivel([FromBody] HorarioDisponivel horario)
         {
             await _medicoService.CadastrarHorarioDisponivel(horario);
             return CreatedAtAction(nameof(ObterHorariosDisponiveis), new { medicoId = horario.MedicoId }, horario);
         }
 
-        [HttpPut]
+        [HttpPut("editar-horario-disponivel")]
+        [Authorize]
         public async Task<IActionResult> EditarHorarioDisponivel([FromBody] HorarioDisponivel horario)
         {
             await _medicoService.EditarHorarioDisponivel(horario);
@@ -39,6 +42,7 @@ namespace HealthMed.Presentation.Controllers
         }
 
         [HttpGet("{medicoId}")]
+        [Authorize]
         public async Task<ActionResult<List<HorarioDisponivel>>> ObterHorariosDisponiveis(int medicoId)
         {
             var horarios = await _medicoService.ObterHorariosDisponiveis(medicoId);
