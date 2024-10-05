@@ -33,8 +33,9 @@ CREATE TABLE Agendamento (
 CREATE TABLE HorarioDisponivel (
     Id INT PRIMARY KEY IDENTITY,
     MedicoId INT FOREIGN KEY REFERENCES Medico(Id),
-    DataHora DATETIME,
-    Disponivel BIT
+    DataDisponibilidade DATETIME,
+    HoraInicio TIME(7),
+    HoraFim TIME(7)
 );
 
 -- Tabela de Auditoria de Agendamentos

@@ -13,6 +13,7 @@ using HealthMed.Infrastructure.Email;
 using HealthMed.Infrastructure.Interface;
 using HealthMed.Middleware;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using HealthMed.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
