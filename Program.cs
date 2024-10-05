@@ -16,6 +16,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<HealthMedDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionString")));
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
@@ -63,6 +66,9 @@ builder.Services.AddEndpointsApiExplorer();
 var configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
 
 var key = Encoding.ASCII.GetBytes(configuration.GetValue<string>("Secret"));
+
+var emailSettings = builder.Configuration.GetSection("EmailSettings").Get<EmailSettings>();
+builder.Services.AddSingleton(emailSettings);
 
 builder.Services.AddAuthentication(
     x =>
