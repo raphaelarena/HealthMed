@@ -9,7 +9,6 @@ Esta API foi desenvolvida em C# com o objetivo de gerenciar o agendamento de con
 - Cadastro de Médicos: Registra médicos com suas respectivas especialidades.
 - Cadastro/Edição de Horários Disponíveis: Registra a disponibilidade do médico para suas respectivas consultas.
 - Agendamento de Consultas: Permite o agendamento de consultas entre médicos e pacientes em horários disponíveis.
-- Consulta de Agendamentos: Visualiza consultas agendadas com filtros por data, paciente e médico.
 - Edição Consultas: Atualiza agendamentos conforme necessário.
 - Notificações: Envia lembretes automáticos para pacientes e médicos antes da consulta (opcional).
 
